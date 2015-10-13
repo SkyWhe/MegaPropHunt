@@ -76,6 +76,7 @@ function GM:RenderDisguiseHalo()
 				end
 			end
 		end
+
 		local tab = {}
 		for k, ply in pairs(player.GetAll()) do
 			if ply != client && ply:Team() == 3 && ply:IsDisguised() then
@@ -85,6 +86,17 @@ function GM:RenderDisguiseHalo()
 			end
 		end
 		halo.Add(tab, Color(120,120,200), 2, 2, 2, true, false)
+
+
+		local tab = {}
+		for k, ply in pairs(player.GetAll()) do
+			if ply != client && ply:Team() == 2 then
+				if IsValid(ply) then
+					table.insert(tab, ply)
+				end
+			end
+		end
+		halo.Add(tab, Color(255,176,64), 2, 2, 2, true, false)
 	end
 
 

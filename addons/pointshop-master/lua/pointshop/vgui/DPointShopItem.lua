@@ -150,7 +150,7 @@ function PANEL:PaintOver()
 		surface.DrawTexturedRect(self:GetWide() - 5 - 16, 5, 16, 16)
 	end
 	
-	if self.Data.AllowedUserGroups and #self.Data.AllowedUserGroups > 0 then
+	if self.Data.AllowedTeams and #self.Data.AllowedTeams > 0 then
 		surface.SetMaterial(groupicon)
 		surface.SetDrawColor(Color(255, 255, 255, 255))
 		surface.DrawTexturedRect(5, self:GetTall() - self.InfoHeight - 5 - 16, 16, 16)

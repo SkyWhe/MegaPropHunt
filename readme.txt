@@ -1,3 +1,3 @@
-put the fatDl.lua file in the lua/autorun folder
+Upgraded version of the classic PropHunt game type in Garry's Mod.
 
-Use this collection: 533724519 
+Adds ability to do rotation lock as a prop, object highlighting as a hunter or a prop and a simple point shop for active user bases.

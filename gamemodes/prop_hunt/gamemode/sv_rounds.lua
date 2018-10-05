@@ -320,37 +320,18 @@ end
 
 function GM:RoundsThink()
 
-		for k, ply in pairs(player.GetAll()) do
-
-			if(ply:Team() == 2)then
-				ply:SetUserGroup("Hunter")
-				ply:SetNWString('UserGroup', "Hunter")
-				
-			end
-
-			if(ply:Team() == 3)then
-				ply:SetUserGroup("Prop")
-				ply:SetNWString('UserGroup', "Prop")
-			end
-		end
-
 	if self:GetGameState() == 0 then
 		local c = 0
 		for k, ply in pairs(player.GetAll()) do
 			if ply:Team() != 1 then // ignore spectators
 				c = c + 1
-				if(ply:Team() == 2)then
-					ply:SetUserGroup("Hunter")
-				end
-				if(ply:Team() == 3)then
-					ply:SetUserGroup("Prop")
-				end
 			end
 		end
 		if c >= 2 && self.RoundWaitForPlayers + self.StartWaitTime:GetFloat() < CurTime() then
 			self:SetupRound()
 		end
 	elseif self:GetGameState() == 1 then
+		--self:CheckForVictory()
 		if self:GetStateRunningTime() > 30 then
 			self:StartRound()
 		end

@@ -199,8 +199,8 @@ function Player:PS_BuyItem(item_id)
 		return false
 	end
 
-	if ITEM.AllowedUserGroups and #ITEM.AllowedUserGroups > 0 then
-		if not table.HasValue(ITEM.AllowedUserGroups, self:PS_GetUsergroup()) then
+	if ITEM.AllowedTeams and #ITEM.AllowedTeams > 0 then
+		if not table.HasValue(ITEM.AllowedTeams, self:PS_GetTeam()) then
 			self:PS_Notify('You\'re not in the right group to buy this item!')
 			return false
 		end
@@ -209,8 +209,8 @@ function Player:PS_BuyItem(item_id)
 	local cat_name = ITEM.Category
 	local CATEGORY = PS:FindCategoryByName(cat_name)
 
-	if CATEGORY.AllowedUserGroups and #CATEGORY.AllowedUserGroups > 0 then
-		if not table.HasValue(CATEGORY.AllowedUserGroups, self:PS_GetUsergroup()) then
+	if CATEGORY.AllowedTeams and #CATEGORY.AllowedTeams > 0 then
+		if not table.HasValue(CATEGORY.AllowedTeams, self:PS_GetTeam()) then
 			self:PS_Notify('You\'re not in the right group to buy this item!')
 			return false
 		end

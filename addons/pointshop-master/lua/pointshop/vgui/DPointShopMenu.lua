@@ -215,9 +215,9 @@ function PANEL:Init()
 	
 	-- items
 	for _, CATEGORY in pairs(categories) do
-		LocalPlayer():PrintMessage( HUD_PRINTCONSOLE, LocalPlayer():PS_GetUsergroup() )
-		if CATEGORY.AllowedUserGroups and #CATEGORY.AllowedUserGroups > 0 then
-			if not table.HasValue(CATEGORY.AllowedUserGroups, LocalPlayer():PS_GetUsergroup()) then
+		LocalPlayer():PrintMessage( HUD_PRINTCONSOLE, LocalPlayer():PS_GetTeam() )
+		if CATEGORY.AllowedTeams and #CATEGORY.AllowedTeams > 0 then
+			if not table.HasValue(CATEGORY.AllowedTeams, LocalPlayer():PS_GetTeam()) then
 				continue
 			end
 		end

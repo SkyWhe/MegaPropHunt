@@ -70,7 +70,7 @@ function PS:LoadItems()
 			CATEGORY.Icon = ''
 			CATEGORY.Order = 0
 			CATEGORY.AllowedEquipped = -1
-			CATEGORY.AllowedUserGroups = {}
+			CATEGORY.AllowedTeams = {}
 			CATEGORY.CanPlayerSee = function() return true end
 			CATEGORY.ModifyTab = function(tab) return end
 			
@@ -97,7 +97,7 @@ function PS:LoadItems()
 					-- model and material are missing but there's no way around it, there's a check below anyway
 					
 					ITEM.AdminOnly = false
-					ITEM.AllowedUserGroups = {} -- this will fail the #ITEM.AllowedUserGroups test and continue
+					ITEM.AllowedTeams = {} -- this will fail the #ITEM.AllowedTeams test and continue
 					ITEM.SingleUse = false
 					ITEM.NoPreview = false
 					
